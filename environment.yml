@@ -7,4 +7,4 @@ dependencies:
   - pandas
   - bokeh
   - rise
-  - julia=0.6.0
+  - julia

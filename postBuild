@@ -3,12 +3,12 @@
 export NEMO_SOURCE_BUILD=1
 
 # Clone the package
-julia -e 'Pkg.clone("https://github.com/erou/Nemo.jl.git"); Pkg.checkout("Nemo", "embeddings")'
+julia -e 'using Pkg;Pkg.add(PackageSpec(url="https://github.com/erou/Nemo.jl.git", rev="embeddings"))'
 
 # Change Flint branch (no need anymore)
 # cd /srv/julia/pkg/v0.6/Nemo/deps
 # sed -i -e 's/FLINT_VERSION = "[0-9a-f]*"/FLINT_VERSION = "embeddings"/' -e 's|https://github.com/wbhart/flint2.git|https://github.com/erou/flint2.git|' build.jl
 
 # Build the package
-julia -e 'Pkg.build("Nemo")'
+# julia -e 'Pkg.build("Nemo")'
 julia -e 'using Nemo'
